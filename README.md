@@ -1,24 +1,58 @@
 # ISS Tracker Using API
 
-This project tracks the current position of the International Space Station (ISS) in real-time and displays it on a world map using Python. The script fetches live data about the ISS, astronauts aboard, and your current location, and displays it in a Turtle graphics window.
+This project tracks the current location of the International Space Station (ISS) using APIs and displays real-time data in a graphical format with the help of the `turtle` module in Python.
 
 ## Features
 
 - Displays real-time position of the ISS on a world map.
-- Shows the current number of astronauts aboard the ISS.
-- Tracks and displays your current latitude and longitude.
-- Updates the ISS position every 5 seconds.
+- Shows the number and names of astronauts aboard the ISS.
+- Displays your current geographic coordinates.
+- Real-time ISS tracking updates every 5 seconds.
 
 ## Requirements
 
-Before running the script, ensure you have the following Python libraries installed:
+- Python 3.x
+- `geocoder` library (for geolocation)
+- `turtle` module (for graphical display)
+- `urllib` and `json` (for fetching API data)
 
-- `geocoder`: For fetching your current latitude and longitude.
-- `turtle`: For displaying the world map and ISS icon.
-- `urllib`, `json`, and `time`: Standard Python libraries for fetching and parsing data.
+## Installation
 
-Install the required libraries using pip:
+1.  Clone the repository:
 
-```bash
-pip install geocoder
+    ```bash
+    git clone [https://github.com/azeemk210/iss-tracker-using-api.git](https://github.com/azeemk210/iss-tracker-using-api.git)
+    ```
 
+2.  Install the required Python libraries:
+
+    ```bash
+    pip install geocoder
+    ```
+
+3.  Download or create the following images for the graphical display:
+
+    -   `images/map.gif`: A world map in `.gif` format.
+    -   `images/iss.gif`: A `.gif` icon representing the ISS.
+
+4.  Run the Python script:
+
+    ```bash
+    python iss_tracker.py
+    ```
+
+## How it Works
+
+The script fetches the current location of the ISS using the API endpoint `http://api.open-notify.org/iss-now.json`.
+
+It also fetches the number and names of astronauts aboard the ISS from `http://api.open-notify.org/astros.json`.
+
+It updates your current latitude and longitude using the `geocoder` API based on your IP address.
+
+The script then displays this information in a text file `iss.txt` and opens it in the browser.
+
+The `turtle` graphics window shows a world map, with the ISS icon moving in real-time as the ISS orbits the Earth.
+
+## Contribution
+
+Feel free to fork this repository, make changes, and submit pull requests.
